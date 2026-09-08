@@ -9,8 +9,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About Me",
+    "title": "Lareina Lyu",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "I completed my undergraduate degree at the University of Toronto, majoring in Statistics and Economics, and subsequently worked as a project assistant managing timelines and budgets. Driven by a passion for analyzing data, I joined the UBC Master of Data Science (MDS) program to transition into a career as a data analyst."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Lareina Lyu",
+    "section": "Education",
+    "text": "Education\nUniversity of British Columbia Master of Data Science | Expected June 2027\nUniversity of Toronto B.A in Statistics & Economics | Sept 2018 - June 2022\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]

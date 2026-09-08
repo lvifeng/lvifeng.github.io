@@ -1,6 +1,20 @@
 ---
-title: "About Me"
+title: "Lareina Lyu"
+about:
+  template: solana
+  image: images/profilepic.jpg
 ---
+
+I completed my undergraduate degree at the University of Toronto, majoring in Statistics and Economics, and subsequently worked as a project assistant managing timelines and budgets. 
+Driven by a passion for analyzing data, I joined the UBC Master of Data Science (MDS) program to transition into a career as a data analyst.
+
+## Education
+
+University of British Columbia
+Master of Data Science | Expected June 2027
+
+University of Toronto
+B.A in Statistics & Economics | Sept 2018 - June 2022
 
 This is a Quarto website.
 
