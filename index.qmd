@@ -5,17 +5,18 @@ about:
   image: images/profilepic.jpg
 ---
 
-I completed my undergraduate degree at the University of Toronto, majoring in Statistics and Economics, and subsequently worked as a project assistant managing timelines and budgets. 
-Driven by a passion for analyzing data, I joined the UBC Master of Data Science (MDS) program to transition into a career as a data analyst.
+Hello! I am Lareina Lyu, an MDS candidate at the University of British Columbia. 
+I focus on transforming raw datasets into clean code, compelling visualizations, and actionable insights. 
+Welcome to my portfolio, where I share my academic journey, technical projects, and professional growth.
 
 ## Education
 
-University of British Columbia
+University of British Columbia  |
 Master of Data Science | Expected June 2027
 
-University of Toronto
+University of Toronto   |
 B.A in Statistics & Economics | Sept 2018 - June 2022
 
-This is a Quarto website.
+## Experience
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Quantum | Project Assistant | Sept 2023 - Dec 2025

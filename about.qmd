@@ -2,4 +2,19 @@
 title: "About"
 ---
 
-About this site
+## Background
+
+I hold an undergraduate degree in Statistics and Economics from the University of Toronto. 
+Following graduation, I worked as a project assistant managing project timelines, budgets, and conference event organization. 
+These responsibilities honed my cross-functional coordination, attention to detail, and operational efficiency in fast-paced environments.
+
+## Why Data Science
+
+My interest began with hands-on R statistical projects in university and grew while observing machine learning applications in my previous role. 
+I am driven by the ability to turn complex raw data into clear, actionable insights for non-technical stakeholders. 
+Additionally, I find immense satisfaction in writing code that yields beautiful and reliable results.
+
+## Outside of Data Science
+
+In my free time, I love hitting the trails around Vancouver or spending time in the kitchen baking. 
+Exploring nature and trying out new desserts are my favorite ways to recharge.
