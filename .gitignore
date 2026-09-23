@@ -1,2 +1,14 @@
 /.quarto/
 **/*.quarto_ipynb
+.DS_Store
+.quarto
+_site
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+
+# Virtual environments
+.venv
+
+.Rhistory

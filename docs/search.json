@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\nLareina Lyu\n\n\n\n\n\nNo matching items"
+    "text": "Analysis of Penguins Data using Python\n\n\n\n\n\n\n\n\nSep 22, 2026\n\n\nLareina Lyu\n\n\n\n\n\n\n\n\n\n\n\n\nAnalysis of Penguins Data using R\n\n\n\n\n\n\n\n\nSep 22, 2026\n\n\nLareina Lyu\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\nLareina Lyu\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -28,11 +28,109 @@
     "text": "Experience\nQuantum | Project Assistant | Sept 2023 - Dec 2025"
   },
   {
+    "objectID": "posts/02_penguins_python/index.html",
+    "href": "posts/02_penguins_python/index.html",
+    "title": "Analysis of Penguins Data using Python",
+    "section": "",
+    "text": "In this blog, I will use Python to compare the body mass across three penguins species from palmerpenguins dataset."
+  },
+  {
+    "objectID": "posts/02_penguins_python/index.html#setup",
+    "href": "posts/02_penguins_python/index.html#setup",
+    "title": "Analysis of Penguins Data using Python",
+    "section": "Setup",
+    "text": "Setup\n\nImport relevant packages.\n\n\nimport pandas as pd\nimport altair as alt\nfrom palmerpenguins import load_penguins"
+  },
+  {
+    "objectID": "posts/02_penguins_python/index.html#loading-and-cleaning-the-data",
+    "href": "posts/02_penguins_python/index.html#loading-and-cleaning-the-data",
+    "title": "Analysis of Penguins Data using Python",
+    "section": "Loading and cleaning the data",
+    "text": "Loading and cleaning the data\n\nLoading the data and drop rows with missing values for further analysis.\n\n\npenguins = load_penguins()\npenguins_clean = penguins.dropna(subset=[\"body_mass_g\"])\npenguins_clean.head(5)\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n5\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nmale\n2007"
+  },
+  {
+    "objectID": "posts/02_penguins_python/index.html#summary-by-species",
+    "href": "posts/02_penguins_python/index.html#summary-by-species",
+    "title": "Analysis of Penguins Data using Python",
+    "section": "Summary by species",
+    "text": "Summary by species\n\nCalculate the number of penguins and their average body mass for each species.\n\n\nmass_summary = (\n    penguins_clean\n    .groupby(\"species\")[\"body_mass_g\"]\n    .agg(count=\"count\", avg_mass_g=\"mean\")\n    .round(2)\n    .reset_index()\n)\nmass_summary\n\n\n\n\n\n\n\n\nspecies\ncount\navg_mass_g\n\n\n\n\n0\nAdelie\n151\n3700.66\n\n\n1\nChinstrap\n68\n3733.09\n\n\n2\nGentoo\n123\n5076.02"
+  },
+  {
+    "objectID": "posts/02_penguins_python/index.html#visualizing-body-mass",
+    "href": "posts/02_penguins_python/index.html#visualizing-body-mass",
+    "title": "Analysis of Penguins Data using Python",
+    "section": "Visualizing body mass",
+    "text": "Visualizing body mass\n\nFigure 1 visualize how body mass is spread out within each species.\nFindings: Gentoo penguins are the heaviest of the three species. Adelie and Chinstrap penguins have similar average body mass.\n\n\nalt.Chart(penguins_clean).mark_boxplot(size=50).encode(\n    x=alt.X(\"species:N\", title=\"Species\"),\n    y=alt.Y(\"body_mass_g:Q\", title=\"Body mass (g)\"),\n    color=alt.Color(\"species:N\", legend=None)\n).properties(\n    width=400,\n    height=260\n)\n\n\n\n\n\n\n\n\n\nFigure 1: Body mass of penguins by species"
+  },
+  {
+    "objectID": "posts/02_penguins_python/index.html#data",
+    "href": "posts/02_penguins_python/index.html#data",
+    "title": "Analysis of Penguins Data using Python",
+    "section": "Data",
+    "text": "Data\n\nData: Palmer Penguins, Palmer Station Antarctica LTER. The data are available under a CC-0 licence, in accordance with the Palmer Station LTER Data Policy and the LTER Data Access Policy for Type I data.\nCitation: Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218."
+  },
+  {
+    "objectID": "posts/02_penguins_python/index.html#ai-usage-statement",
+    "href": "posts/02_penguins_python/index.html#ai-usage-statement",
+    "title": "Analysis of Penguins Data using Python",
+    "section": "AI Usage Statement",
+    "text": "AI Usage Statement\nI used Claude (Anthropic, Claude Opus 5.5) helped me understand and clarify concepts about Quarto, uv, and reproducible environments, and it assisted with drafting part of the plotting code."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
     "section": "",
     "text": "Orientation was an amazing start to the program, offering a warm introduction to our supportive faculty and staff. It served as a wonderful icebreaker, giving us a great opportunity to start connecting with our new peers. While I didn’t get a chance to meet everyone in the cohort yet, every single person I spoke with was incredibly friendly and welcoming. Looking out from our orientation room on a sunny day, surrounded by a stunning view of the UBC campus, I felt truly excited for the journey ahead.\nWalking into my very first class, concepts like navigating the terminal, running git clone, or launching JupyterLab using uv were completely new to me. Fortunately, the classmates sitting next to me stepped in without hesitation to guide me through the commands, and I am genuinely grateful for their kindness. What surprised me most was the incredible patience and dedication of the teaching staff, who thoughtfully answered every single question from students coming from all different academic backgrounds.\nStepping into such an intensive program can be intimidating, but the supportive environment here has made all the difference. Knowing that I am surrounded by approachable instructors, patient TAs, and helpful peers gives me immense peace of mind. I am heading into the rest of the term feeling capable, motivated, and confident in navigating this fast-paced learning journey.\n\n\n\nCampus view outside the orientation room."
+  },
+  {
+    "objectID": "posts/03_penguins_r/index.html",
+    "href": "posts/03_penguins_r/index.html",
+    "title": "Analysis of Penguins Data using R",
+    "section": "",
+    "text": "In this blog, I will use R to compare flipper length across three penguin species from palmerpenguins dataset."
+  },
+  {
+    "objectID": "posts/03_penguins_r/index.html#setup",
+    "href": "posts/03_penguins_r/index.html#setup",
+    "title": "Analysis of Penguins Data using R",
+    "section": "Setup",
+    "text": "Setup\n\nLoad relevant packages.\n\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "posts/03_penguins_r/index.html#cleaning-the-data",
+    "href": "posts/03_penguins_r/index.html#cleaning-the-data",
+    "title": "Analysis of Penguins Data using R",
+    "section": "Cleaning the data",
+    "text": "Cleaning the data\n\nDrop rows with missing values for further analysis.\n\n\npenguins_clean &lt;- penguins |&gt;\n  filter(!is.na(flipper_length_mm))\n\nhead(penguins_clean, 5)\n\n# A tibble: 5 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           36.7          19.3               193        3450\n5 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "posts/03_penguins_r/index.html#summary-by-species",
+    "href": "posts/03_penguins_r/index.html#summary-by-species",
+    "title": "Analysis of Penguins Data using R",
+    "section": "Summary by species",
+    "text": "Summary by species\n\nCalculate the number of penguins and their average flipper length for each species.\n\n\npenguins_clean |&gt;\n  group_by(species) |&gt;\n  summarise(\n    count = n(),\n    avg_flipper_mm = round(mean(flipper_length_mm), 1)\n  )\n\n# A tibble: 3 × 3\n  species   count avg_flipper_mm\n  &lt;fct&gt;     &lt;int&gt;          &lt;dbl&gt;\n1 Adelie      151           190 \n2 Chinstrap    68           196.\n3 Gentoo      123           217."
+  },
+  {
+    "objectID": "posts/03_penguins_r/index.html#visualizing-flipper-length",
+    "href": "posts/03_penguins_r/index.html#visualizing-flipper-length",
+    "title": "Analysis of Penguins Data using R",
+    "section": "Visualizing flipper length",
+    "text": "Visualizing flipper length\n\nFigure 1 shows the distribution of flipper length for each species.\nFindings: The Gentoo penguins have the longest flipper length of the three species and Adelie penguins have the shortest.\n\n\nggplot(penguins_clean, aes(x = species, y = flipper_length_mm, fill = species)) +\n  geom_boxplot() +\n  labs(x = \"Species\", y = \"Flipper length (mm)\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\nFigure 1: Flipper length of penguins by species."
+  },
+  {
+    "objectID": "posts/03_penguins_r/index.html#data",
+    "href": "posts/03_penguins_r/index.html#data",
+    "title": "Analysis of Penguins Data using R",
+    "section": "Data",
+    "text": "Data\n\nData: Palmer Penguins, Palmer Station Antarctica LTER. The data are available under a CC-0 licence, in accordance with the Palmer Station LTER Data Policy and the LTER Data Access Policy for Type I data.\nCitation: Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218."
+  },
+  {
+    "objectID": "posts/03_penguins_r/index.html#ai-usage-statement",
+    "href": "posts/03_penguins_r/index.html#ai-usage-statement",
+    "title": "Analysis of Penguins Data using R",
+    "section": "AI Usage Statement",
+    "text": "AI Usage Statement\nI used Claude (Anthropic, Claude Opus 5.5) to assist with drafting part of the plotting code."
   },
   {
     "objectID": "about.html",

@@ -1,0 +1,79 @@
+---
+title: "Analysis of Penguins Data using R"
+author: "Lareina Lyu"
+date: "2026-09-22"
+---
+
+In this blog, I will use R to compare flipper length across three penguin species from `palmerpenguins` dataset.
+
+## Setup
+
+- Load relevant packages.
+
+```{r}
+#| message: false
+#| warning: false
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+```
+
+## Cleaning the data
+
+- Drop rows with missing values for further analysis.
+
+```{r}
+penguins_clean <- penguins |>
+  filter(!is.na(flipper_length_mm))
+
+head(penguins_clean, 5)
+```
+
+## Summary by species
+
+- Calculate the number of penguins and their average flipper length for each species.
+
+```{r}
+penguins_clean |>
+  group_by(species) |>
+  summarise(
+    count = n(),
+    avg_flipper_mm = round(mean(flipper_length_mm), 1)
+  )
+```
+
+## Visualizing flipper length
+
+- @fig-flipper-length shows the distribution of flipper length for each species.
+- **Findings**: The Gentoo penguins have the longest flipper length of the three species and Adelie penguins have the shortest.
+
+```{r}
+#| label: fig-flipper-length
+#| fig-cap: "Flipper length of penguins by species."
+#| warning: false
+ggplot(penguins_clean, aes(x = species, y = flipper_length_mm, fill = species)) +
+  geom_boxplot() +
+  labs(x = "Species", y = "Flipper length (mm)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## Data
+
+- Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER.
+The data are available under a
+[CC-0](https://creativecommons.org/share-your-work/public-domain/cc0/) licence, in accordance with the
+[Palmer Station LTER Data Policy](https://pallter.marine.rutgers.edu/data/)
+and the [LTER Data Access Policy for Type I data](https://lternet.edu/data-access-policy/).
+
+- Citation:
+Horst AM, Hill AP, Gorman KB (2020).
+palmerpenguins: Palmer Archipelago (Antarctica) penguin data.
+R package version 0.1.0.
+<https://allisonhorst.github.io/palmerpenguins/>.
+doi: [10.5281/zenodo.3960218](https://doi.org/10.5281/zenodo.3960218).
+
+## AI Usage Statement
+
+I used Claude (Anthropic, Claude Opus 5.5) to assist with drafting part of the plotting code.

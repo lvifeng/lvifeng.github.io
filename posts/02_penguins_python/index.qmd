@@ -1,0 +1,83 @@
+---
+title: "Analysis of Penguins Data using Python"
+author: "Lareina Lyu"
+date: "2026-09-22"
+---
+
+In this blog, I will use Python to compare the body mass across three penguins species from `palmerpenguins` dataset.
+
+## Setup
+
+- Import relevant packages.
+
+```{python}
+#| message: false
+#| warning: false
+import pandas as pd
+import altair as alt
+from palmerpenguins import load_penguins
+```
+
+## Loading and cleaning the data
+
+- Loading the data and drop rows with missing values for further analysis.
+
+```{python}
+penguins = load_penguins()
+penguins_clean = penguins.dropna(subset=["body_mass_g"])
+penguins_clean.head(5)
+```
+
+## Summary by species
+
+- Calculate the number of penguins and their average body mass for each species.
+
+```{python}
+mass_summary = (
+    penguins_clean
+    .groupby("species")["body_mass_g"]
+    .agg(count="count", avg_mass_g="mean")
+    .round(2)
+    .reset_index()
+)
+mass_summary
+```
+
+## Visualizing body mass
+
+- @fig-penguin-mass visualize how body mass is spread out within each species.
+- **Findings**: Gentoo penguins are the heaviest of the three species.
+Adelie and Chinstrap penguins have similar average body mass.
+
+```{python}
+#| label: fig-penguin-mass
+#| fig-cap: "Body mass of penguins by species"
+alt.Chart(penguins_clean).mark_boxplot(size=50).encode(
+    x=alt.X("species:N", title="Species"),
+    y=alt.Y("body_mass_g:Q", title="Body mass (g)"),
+    color=alt.Color("species:N", legend=None)
+).properties(
+    width=400,
+    height=260
+)
+```
+
+## Data
+
+- Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER.
+The data are available under a
+[CC-0](https://creativecommons.org/share-your-work/public-domain/cc0/) licence, in accordance with the
+[Palmer Station LTER Data Policy](http://pal.lternet.edu/data/policies)
+and the [LTER Data Access Policy for Type I data](https://lternet.edu/data-access-policy/).
+
+- Citation:
+Horst AM, Hill AP, Gorman KB (2020).
+palmerpenguins: Palmer Archipelago (Antarctica) penguin data.
+R package version 0.1.0.
+<https://allisonhorst.github.io/palmerpenguins/>.
+doi: [10.5281/zenodo.3960218](https://doi.org/10.5281/zenodo.3960218).
+
+## AI Usage Statement
+
+I used Claude (Anthropic, Claude Opus 5.5) helped me understand and clarify concepts about Quarto, uv, and reproducible environments, and it assisted with drafting part of the plotting code.
