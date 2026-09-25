@@ -4,7 +4,7 @@ author: "Lareina Lyu"
 date: "2026-09-22"
 ---
 
-In this blog, I will use R to compare flipper length across three penguin species from `palmerpenguins` dataset.
+In this blog, I will use R to compare the flipper length across three penguin species from `palmerpenguins` dataset.
 
 ## Setup
 
