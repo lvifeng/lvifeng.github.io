@@ -76,4 +76,4 @@ doi: [10.5281/zenodo.3960218](https://doi.org/10.5281/zenodo.3960218).
 
 ## AI Usage Statement
 
-I used Claude (Anthropic, Claude Opus 5.5) to assist with drafting part of the plotting code.
+I used Claude (Anthropic, Claude Opus 5.5) to assist with setting up r virtual environment, and drafting part of the plotting code.
