@@ -14,7 +14,7 @@ Install these first (with the versions I used):
 
 ## Steps to follow to build site
 
-In a terminal, clone the repository and install the Python packages using `uv sync` (after git clone, make sure to `cd` to the "lvifeng.github.io" folder):
+In a terminal, clone the repository into a chosen working directory and install the Python packages using `uv sync` (! after git clone, make sure to `cd` to the "lvifeng.github.io" folder before doing `uv sync`):
 
 ```bash
 git clone https://github.com/lvifeng/lvifeng.github.io.git
@@ -46,7 +46,7 @@ uv run quarto render
 The built site is written to `docs/`.
 
 To view it, double-click the `docs/index.html` file 
-in your file browser.
+in the file browser.
 
 ## Where the data comes from
 
@@ -54,4 +54,4 @@ Both posts use the [Palmer Penguins](https://allisonhorst.github.io/palmerpengui
 (Palmer Station Antarctica LTER, CC-0 licence),
 which is inside the `palmerpenguins` Python and R packages.
 
-The build does not need the network to fetch the data, as it is installed along with the packages when `uv sync` and `renv::restore()`.
+The build does not need the network to fetch the data. Network needed only when cloning and installing packages, as the data is installed along with the packages when `uv sync` and `renv::restore()`.
