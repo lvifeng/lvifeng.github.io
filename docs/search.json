@@ -88,7 +88,7 @@
     "href": "posts/03_penguins_r/index.html",
     "title": "Analysis of Penguins Data using R",
     "section": "",
-    "text": "In this blog, I will use R to compare flipper length across three penguin species from palmerpenguins dataset."
+    "text": "In this blog, I will use R to compare the flipper length across three penguin species from palmerpenguins dataset."
   },
   {
     "objectID": "posts/03_penguins_r/index.html#setup",
@@ -130,7 +130,7 @@
     "href": "posts/03_penguins_r/index.html#ai-usage-statement",
     "title": "Analysis of Penguins Data using R",
     "section": "AI Usage Statement",
-    "text": "AI Usage Statement\nI used Claude (Anthropic, Claude Opus 5.5) to assist with drafting part of the plotting code."
+    "text": "AI Usage Statement\nI used Claude (Anthropic, Claude Opus 5.5) to assist with setting up r virtual environment, and drafting part of the plotting code."
   },
   {
     "objectID": "about.html",

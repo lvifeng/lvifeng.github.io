@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Import relevant packages.</li>
 </ul>
-<div id="b307eb74" class="cell" data-message="false" data-execution_count="1">
+<div id="44f81eeb" class="cell" data-message="false" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> load_penguins</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Loading the data and drop rows with missing values for further analysis.</li>
 </ul>
-<div id="fa437b13" class="cell" data-execution_count="2">
+<div id="ee738ce6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> load_penguins()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>penguins_clean <span class="op">=</span> penguins.dropna(subset<span class="op">=</span>[<span class="st">"body_mass_g"</span>])</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>penguins_clean.head(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -313,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Calculate the number of penguins and their average body mass for each species.</li>
 </ul>
-<div id="86b6b99d" class="cell" data-execution_count="3">
+<div id="2c01c637" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mass_summary <span class="op">=</span> (</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    penguins_clean</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">"species"</span>)[<span class="st">"body_mass_g"</span>]</span>
@@ -381,23 +381,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div aria-describedby="fig-penguin-mass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 
 <style>
-  #altair-viz-48994bd1653e43a3b6165330c8973956.vega-embed {
+  #altair-viz-843440d2046145efab57b54ff6c67e73.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-48994bd1653e43a3b6165330c8973956.vega-embed details,
-  #altair-viz-48994bd1653e43a3b6165330c8973956.vega-embed details summary {
+  #altair-viz-843440d2046145efab57b54ff6c67e73.vega-embed details,
+  #altair-viz-843440d2046145efab57b54ff6c67e73.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-48994bd1653e43a3b6165330c8973956"></div>
+<div id="altair-viz-843440d2046145efab57b54ff6c67e73"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-48994bd1653e43a3b6165330c8973956") {
-      outputDiv = document.getElementById("altair-viz-48994bd1653e43a3b6165330c8973956");
+    if (outputDiv.id !== "altair-viz-843440d2046145efab57b54ff6c67e73") {
+      outputDiv = document.getElementById("altair-viz-843440d2046145efab57b54ff6c67e73");
     }
 
     const paths = {
