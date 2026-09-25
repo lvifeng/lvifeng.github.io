@@ -9,8 +9,8 @@ My Quarto website, published with GitHub <https://github.com/lvifeng/lvifeng.git
 Install these first (with the versions I used):
 
 - [Quarto](https://quarto.org/docs/get-started/) 1.10.18
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) 0.12.5 (uv installs the pinned Python version automatically)
-- [R](https://cran.r-project.org/) 4.6.1 (`renv` installs itself on first run)
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) 0.12.5
+- [R](https://cran.r-project.org/) 4.6.1
 
 ## Steps to follow to build site
 
