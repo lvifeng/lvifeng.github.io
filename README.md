@@ -32,7 +32,7 @@ R
 renv::restore()
 q()
 ```
-
+When asked do you want to proceed, answer `y`.
 When asked to save the workspace, answer `n`.
 
 Back in the terminal, build the site:
